@@ -2,7 +2,7 @@
 frontend/
 backend/
 
-# Production data dump — do not commit customer-adjacent data
+# Local working copy of DB exports — the curated one to commit lives in db-snapshot/
 db-exports/
 
 # Large source PDFs — already transcribed to RFP_Litigation_Management_System_v0.3.md

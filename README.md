@@ -20,12 +20,13 @@ Live demo: **https://lms.skoder.co**
 - **`docker-compose.yml`** — local dev compose stub for the real system
 - **`RFP_Litigation_Management_System_v0.3.md`** — full text transcription of the Bank Asia RFP (source PDF not included — see below)
 - **`presentation/`** — the 15-slide client presentation (`.pptx` + `.pdf`), built from real screenshots of the live demo
+- **`db-snapshot/`** — point-in-time export of the live demo database (schema + data). See its README for what it is and how to restore or refresh it.
 
 ## Not included here
 
 - `frontend/` and `backend/` — separate repos (linked above)
 - The original RFP PDF and workshop slide PDF — large binaries already fully transcribed into `RFP_Litigation_Management_System_v0.3.md`
-- `db-exports/` — point-in-time production database dumps; kept local only, not version-controlled
+- `db-exports/` — the local working folder for ad hoc DB dumps; the curated, documented snapshot lives in `db-snapshot/` instead
 
 ## Important scope note
 
