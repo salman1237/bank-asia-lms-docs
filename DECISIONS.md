@@ -4,6 +4,11 @@ Most recent first. Each entry: decision, date, rationale, who/what prompted it.
 
 ---
 
+## 2026-10-27 — Target architecture documented; stack moves to Python 3.12 and PostgreSQL 16
+**Decision:** Added `architecture/`, the proposed target architecture for the real system in nine documents with Mermaid diagrams: system architecture, workflow, data flow, network/storage/server, integration, Level-0 context, implementation, risk management and technology layers. It proposes on-premises deployment across DC, NDR and far DR (synchronous replication to NDR, cascading to DR; RPO 0, target RTO 30 minutes), a modular monolith on FastAPI and Next.js, PostgreSQL 16 with Patroni, S3-compatible object storage, and Celery workers with a Valkey broker for background jobs. The stack versions in `CLAUDE.md`, `docs/` and `init.sh` move from Python 3.11 and PostgreSQL 15 to Python 3.12 and PostgreSQL 16 to match.
+**Why:** The client asked for a complete system architecture with diagrams. Python 3.12 and PostgreSQL 16 are what the live demo already runs, and both stay supported a year longer than 3.11 and 15 into the six-year support term (RFP §6.30); upgrades beyond that are tracked as risk R11. Celery with Valkey settles the background-jobs choice that `docs/Technical_Requirements.md` had left open, using a BSD-licensed, Redis-compatible broker.
+**How to apply:** Treat `architecture/` as a proposal until design sign-off. The "Items to confirm at design sign-off" table in `architecture/README.md` lists the open choices; sizing, durations and SLAs are indicative. Every diagram pins Mermaid's classic layout (`layout: dagre`, `look: classic`) in its front matter. Keep the pin when editing, so the diagrams render the same on Mermaid 10, 11 and 12.
+
 ## 2026-10-26 — Demo gained a real backend (FastAPI + PostgreSQL), still not the production system
 **Decision:** Built a second repo, `bank-asia-lms-backend` (FastAPI, SQLAlchemy, PostgreSQL via Dokploy-managed Postgres resource), and rewired the frontend's zustand store to call it instead of mutating local/localStorage state. Scope: a generic `module_records` table (JSONB `data`/`history` columns) serving all 31 modules' CRUD + maker-checker transitions, auto-seeded from a JSON snapshot of the original synthetic dataset. No authentication (login stays the quick role-switcher — user's explicit call when asked). No Alembic migrations (`create_all` on startup) — deliberately lighter than `docs/Rules.md`'s "Alembic only" rule for the real system.
 **Why:** Client asked for "real backend with database for the demo." User chose "demo-grade real backend" over "full production-grade per docs/Architecture.md" when asked — real persistence and a real API, not full RBAC/audit-grade rigor or CBS integration work.
@@ -25,7 +30,7 @@ Most recent first. Each entry: decision, date, rationale, who/what prompted it.
 ## 2026-10-26 — Stack: FastAPI + Next.js + PostgreSQL
 **Decision:** Backend on Python 3.11/FastAPI/SQLAlchemy 2.0/Alembic, frontend on Next.js 14 (TypeScript/Tailwind), database PostgreSQL 15.
 **Why:** RFP leaves the stack open (requires "cloud-ready, modular, N-tier architecture," on-prem preferred — no language/framework mandate). Chosen for team fit and iteration speed.
-**How to apply:** All new code follows this stack. See `docs/Technical_Requirements.md` for exact versions and check commands.
+**How to apply:** All new code follows this stack. See `docs/Technical_Requirements.md` for exact versions and check commands. *(Versions updated on 2026-10-27 to Python 3.12 and PostgreSQL 16 — see the entry above.)*
 
 ## 2026-10-26 — CBS integration mocked for initial development
 **Decision:** Core Banking System integration is stubbed via `MockCBSClient` during feature development. Real CBS wiring (credentials, real endpoints, REST/SOAP/batch per RFP 7.3.7) is a separate, later milestone — not started without explicit sign-off.

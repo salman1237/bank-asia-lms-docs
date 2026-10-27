@@ -6,7 +6,7 @@ Reliable, verified work over speed. Every feature ships with a passing verificat
 ## Project Overview
 Litigation Management System (LMS) for Bank Asia PLC's Legal Department, built per `RFP_Litigation_Management_System_v0.3.md` (Sections 7 & 8 are the binding spec).
 
-- **Backend:** Python 3.11, FastAPI, SQLAlchemy 2.0, Alembic, PostgreSQL 15
+- **Backend:** Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic, PostgreSQL 16
 - **Frontend:** Next.js 14 (App Router), TypeScript, Tailwind
 - **Auth:** JWT + Role-Based Access Control (RBAC)
 - **Core Banking System (CBS):** integrated via a mock adapter during development (see `docs/Technical_Requirements.md`). Never call a real CBS endpoint from app code at this stage.
@@ -38,6 +38,7 @@ Update `claude-progress.md` and `DECISIONS.md` (if a decision was made), run `ma
 - `docs/Technical_Requirements.md` — stack, versions, check commands, CBS/SMS/email integration contracts. Read when adding a dependency or touching integrations.
 - `docs/Functional_Requirements.md` — FR-01…FR-31, one per RFP Section 8 module. Read when building a feature; this is what `feature_list.json` is derived from.
 - `docs/Non_Functional_Requirements.md` — security, performance, compliance, localization targets. Read when touching auth, reporting, or anything cross-cutting.
+- `architecture/` — proposed target architecture with Mermaid diagrams: sites, network zones, storage, integrations, implementation plan, risks, technology layers. Read when touching deployment, infrastructure or an external integration.
 
 ## State Files
 - `feature_list.json` — one entry per feature: behavior, verification command, state.

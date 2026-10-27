@@ -6,12 +6,12 @@ Read when: adding a dependency, setting up environments, or touching an integrat
 
 | Layer | Choice |
 |---|---|
-| Backend language/framework | Python 3.11, FastAPI |
+| Backend language/framework | Python 3.12, FastAPI |
 | ORM / migrations | SQLAlchemy 2.0, Alembic |
-| Database | PostgreSQL 15 |
+| Database | PostgreSQL 16 |
 | Frontend | Next.js 14 (App Router), TypeScript, Tailwind CSS |
 | Auth | JWT access/refresh tokens, RBAC (role → permission mapping stored in DB, per RFP 7.9.2) |
-| Background jobs / reminders | APScheduler or Celery + Redis (decide before building RFP 8.26 Notification module — see `DECISIONS.md`) |
+| Background jobs / reminders | Celery 5 workers and Celery Beat with a Valkey 8 broker, as proposed in `architecture/09-technology-layers.md` — confirm at design sign-off, before building the RFP 8.26 Notification module (see `DECISIONS.md`) |
 | File storage | Local disk in dev; S3-compatible object storage in UAT/Prod (RFP 8.24 Document Upload) |
 | SMS/Email gateway | Mock adapters in dev/test; real gateway config deferred (RFP 7.3.4) |
 | CBS integration | Mock adapter in dev/test (`MockCBSClient`); real integration is a separate later milestone |

@@ -1,6 +1,6 @@
 # Progress Log
 
-## Status: Demo now has a real backend + database (`backend/`), live on lms.skoder.co; real production system build not started
+## Status: Demo live on lms.skoder.co with a real backend + database; target architecture proposed in `architecture/`; real production system build not started
 
 ### Done
 - RFP content extracted and captured in `RFP_Litigation_Management_System_v0.3.md`.
@@ -12,6 +12,8 @@
 - Pulled the real Bank Asia brand with Playwright against bankasia-bd.com: real logo/favicon, brand colors (`#1B498A` primary, `#D5002B` accent), fonts (Poppins headings / Inter body as free substitutes for Century Gothic / Webly Sleek). Applied across the app; redeployed and verified live.
 - Built a real backend (`backend/`, separate repo `salman1237/bank-asia-lms-backend`): FastAPI + SQLAlchemy + PostgreSQL, generic `module_records` table (JSONB data/history) backing all 31 modules' CRUD + maker-checker transitions, auto-seeded from a snapshot of the original synthetic dataset. No auth (role-switcher login kept, per user's choice). Rewired the frontend's zustand store (`lib/api-client.ts`, `lib/store.ts`) to call this API instead of localStorage. Deployed to Dokploy as two more resources in the same project: `bank-asia-lms-backend` (API) and `bank-asia-lms-db` (managed Postgres), path-routed at `lms.skoder.co/api/*` (same-origin, no CORS). Verified end-to-end with Playwright against the live production URL: create → submit → approve cycle round-trips through the real database and survives a fresh browser session.
 
+- Wrote the proposed target architecture (`architecture/`): nine documents with 37 Mermaid diagrams, each checked to render on Mermaid 10.9, 11 and 12. Aligned the stack versions in `CLAUDE.md`, `docs/` and `init.sh` to Python 3.12 and PostgreSQL 16, and settled background jobs on Celery with a Valkey broker (see `DECISIONS.md`).
+
 ### Doing
 - Nothing in progress. Demo is presentation-ready.
 
@@ -19,6 +21,7 @@
 - Nothing.
 
 ### Next Steps (real system — separate from the demo)
+0. Confirm the open items in `architecture/README.md` ("Items to confirm at design sign-off") with the Bank.
 1. Run `init.sh` to scaffold the FastAPI + Next.js + PostgreSQL skeleton (FR-00) for the actual production system described in `docs/Architecture.md`.
 2. Implement auth/JWT, RBAC core, audit trail infra, shared maker-checker workflow state machine — these are prerequisites for every other FR.
 3. Get `make check` passing on the empty skeleton before picking up FR-01.

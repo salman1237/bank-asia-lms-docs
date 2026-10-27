@@ -13,7 +13,7 @@ fi
 # 2. Backend: Python env + deps
 if [ ! -d backend/.venv ]; then
   echo "-- Setting up backend venv"
-  python3.11 -m venv backend/.venv
+  python3.12 -m venv backend/.venv
 fi
 # shellcheck disable=SC1091
 source backend/.venv/bin/activate

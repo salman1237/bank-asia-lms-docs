@@ -2,6 +2,8 @@
 
 Read when: changing structure, adding a module, or touching how layers talk to each other.
 
+This document covers the application's internal structure. The deployment-level target architecture (sites, network zones, storage, integrations, risks) is in [`architecture/`](../architecture/README.md).
+
 ## Layers
 
 ```
@@ -13,7 +15,7 @@ service/    <- Business logic, maker-checker workflow, audit trail writes, CBS/S
     |
 repository/ <- SQLAlchemy models + query functions. Only layer that touches the DB session directly.
     |
-PostgreSQL 15
+PostgreSQL 16
 ```
 
 `api/` never touches the database directly — it calls `service/`, which calls `repository/`. `repository/` never contains business logic or workflow rules.

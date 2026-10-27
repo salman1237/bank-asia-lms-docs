@@ -13,6 +13,7 @@ Live demo: **https://lms.skoder.co**
 
 - **`CLAUDE.md`** — the map: stack, quick-start commands, hard constraints, pointers into `docs/`
 - **`docs/`** — Architecture, Rules, Technical/Functional/Non-Functional Requirements for the *real* production system
+- **`architecture/`** — proposed target architecture for the real system: nine documents with Mermaid diagrams (system, workflow, data flow, network/storage/server, integration, Level-0 context, implementation, risk management, technology layers). Start at `architecture/README.md`
 - **`feature_list.json`** — one entry per feature (FR-00…FR-31), seeded from `docs/Functional_Requirements.md`
 - **`claude-progress.md`** — running session log of what's done, in progress, and next
 - **`DECISIONS.md`** — architectural and scope decisions with rationale, most recent first
