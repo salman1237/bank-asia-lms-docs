@@ -1,0 +1,11 @@
+services:
+  lms-demo:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bank-asia-lms-demo
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "FR-00",
+    "behavior": "Project scaffolding: FastAPI + Next.js skeleton, auth/JWT, RBAC core, audit trail infra, shared maker-checker workflow state machine, CI check pipeline",
+    "verification": "make check",
+    "state": "active",
+    "evidence": ""
+  },
+  {
+    "id": "FR-01",
+    "behavior": "User Group Management: CRUD on user groups, search/filter, group-wise privilege setup",
+    "verification": "pytest tests/modules/user_group/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-02",
+    "behavior": "User Management: CRUD, maker-checker profile approval, lock/unlock, activate/deactivate, session policy",
+    "verification": "pytest tests/modules/user/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-03",
+    "behavior": "Login: user ID/password auth, lockout after 5 failed attempts, self-service password reset",
+    "verification": "pytest tests/modules/auth/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-04",
+    "behavior": "Parameter Management: admin CRUD for ~36 reference/lookup lists used system-wide",
+    "verification": "pytest tests/modules/parameters/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-05",
+    "behavior": "Holiday Setup: court-wise (Lower Court / High Court) holiday calendar management",
+    "verification": "pytest tests/modules/holiday/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-06",
+    "behavior": "Lawyer Package Bill Setup: add/edit/delete/verify billing packages, extend package amount",
+    "verification": "pytest tests/modules/lawyer_package/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-07",
+    "behavior": "Dashboard: real-time stats for notices, approvals, auctions, case updates, bills, court schedules",
+    "verification": "pytest tests/modules/dashboard/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-08",
+    "behavior": "1st Legal Notice / Reminder Notice: create/send/verify notices, CBS customer search, served-notice history",
+    "verification": "pytest tests/modules/legal_notice/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-09",
+    "behavior": "Case Merit Analysis (CMA): pre-litigation viability workflow, document archiving, pre-litigation TAT workflow, land/property vetting workflow",
+    "verification": "pytest tests/modules/cma/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-10",
+    "behavior": "Auction Management: record creation/validation, publication management, system-generated publication copies, bidder info, final auction memo",
+    "verification": "pytest tests/modules/auction/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-11",
+    "behavior": "Account Statement Generation: CBS-integrated statement generation with interest application",
+    "verification": "pytest tests/modules/account_statement/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-12",
+    "behavior": "Jari Statement with Certificate: Aurtho Jari statement/certificate generation from CBS data",
+    "verification": "pytest tests/modules/jari/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-13",
+    "behavior": "Lower Court Suit Management: suit file CRUD, reassignment, Arji copy upload, expense recording, hearing/limitation tracking",
+    "verification": "pytest tests/modules/lower_court_suit/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-14",
+    "behavior": "Case Steps Update: daily progress tracking, lawyer expense entry, automated milestone notifications",
+    "verification": "pytest tests/modules/case_steps/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-15",
+    "behavior": "Arising Case from Original Case: linked execution suits, session cases, merged suit monitoring, case history tree",
+    "verification": "pytest tests/modules/arising_case/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-16",
+    "behavior": "Bill Processing and Disbursement: lawyer/court/publication/entertainment/conveyance bills, Finance Division integration, recovery/settlement workflow",
+    "verification": "pytest tests/modules/bill_processing/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-17",
+    "behavior": "Court Fee Return and Adjustment: return unutilized fees, adjust against next case, audit log",
+    "verification": "pytest tests/modules/court_fee/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-18",
+    "behavior": "HC & AD Matters: High Court/Appellate Division case filing, arising case tracking, lawyer expense management, cross-court case history",
+    "verification": "pytest tests/modules/hc_ad/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-19",
+    "behavior": "Case Against Bank: record/track cases filed against the bank, lawyer bill integration, centralized repository",
+    "verification": "pytest tests/modules/case_against_bank/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-20",
+    "behavior": "Employee Related & Other Legal Affairs Suit: non-account-linked internal/misc legal cases",
+    "verification": "pytest tests/modules/employee_legal/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-21",
+    "behavior": "Authorization Management: plaintiff change, case withdrawal, bail money withdrawal, court change, configurable other-request type",
+    "verification": "pytest tests/modules/authorization/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-22",
+    "behavior": "Warrant of Arrest Management: WOA recording, arrest history, execution bill entry, issuance/escalation tracking",
+    "verification": "pytest tests/modules/warrant/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-23",
+    "behavior": "Appeal Bail Money Deposit & Withdraw: deposit/withdrawal entry, balance tracking, mobile access with MFA and offline sync",
+    "verification": "pytest tests/modules/bail_money/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-24",
+    "behavior": "Document Upload: multi-format upload with metadata, search/retrieval, audit trail",
+    "verification": "pytest tests/modules/documents/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-25",
+    "behavior": "Reports: ~48 reports including Bangladesh Bank regulatory formats, portfolio/segment/officer/lawyer summaries",
+    "verification": "pytest tests/modules/reports/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-26",
+    "behavior": "Notification: execution-case reminders, fixed-date notifications, next-date-not-updated alerts, communication log",
+    "verification": "pytest tests/modules/notifications/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-27",
+    "behavior": "Customer 360 Search: multi-parameter search, consolidated customer view across cases/financials/documents",
+    "verification": "pytest tests/modules/customer_360/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-28",
+    "behavior": "Legal Memos and Notices Publication: admin memo/notice publishing with expiry management",
+    "verification": "pytest tests/modules/memos/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-29",
+    "behavior": "System Settings: credential/password/session/CAPTCHA/API config, audit log, user login/activity history",
+    "verification": "pytest tests/modules/system_settings/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-30",
+    "behavior": "Legal Opinion Management: submit/track opinion requests, record/retrieve opinions, response timelines",
+    "verification": "pytest tests/modules/legal_opinion/",
+    "state": "not_started",
+    "evidence": ""
+  },
+  {
+    "id": "FR-31",
+    "behavior": "Task Management System: work request/task assignment, deadline tracking, completion status, outcome audit",
+    "verification": "pytest tests/modules/task_management/",
+    "state": "not_started",
+    "evidence": ""
+  }
+]

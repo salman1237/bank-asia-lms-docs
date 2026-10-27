@@ -1,0 +1,12 @@
+# Separate repos — not nested here
+frontend/
+backend/
+
+# Production data dump — do not commit customer-adjacent data
+db-exports/
+
+# Large source PDFs — already transcribed to RFP_Litigation_Management_System_v0.3.md
+RFP_Litigation Management System_Bank_Asia_v0.3 (1).pdf
+Day 1 Session 2 Mohibul_Alam.pdf
+
+.DS_Store
